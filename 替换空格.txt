@@ -1,0 +1,14 @@
+public class Solution {
+    public String replaceSpace(StringBuffer str) {
+    	StringBuffer sb = new StringBuffer();
+        char[] sig = str.toString().toCharArray();
+        for(int i = 0; i < str.length();i++){
+            if(String.valueOf(sig[i]).equals(" ")){
+                sb.append("%20");
+            }else {
+                sb.append(String.valueOf(sig[i]));
+            }
+        }
+        return sb.toString();
+    }
+}
