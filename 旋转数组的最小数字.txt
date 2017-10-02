@@ -1,0 +1,19 @@
+（我用的插入，这题其实可以算是排序的题目，做的比较笨，回头在看下其他的算法）
+public class Solution {
+    public int minNumberInRotateArray(int [] array) {
+        //ArrayList<Integer> list = new ArrayList<Integer>();
+        
+        if(array.length == 0)
+            return 0;
+        else{
+            for(int i = 1;i < array.length;i++)
+                for(int j = i; j > 0 && array[j] < array[j-1]; j--){
+                    int temp = array[j];
+                    array[j] = array[j-1];
+                    array[j-1] = temp;
+                }
+            return array[0];
+        }
+    
+    }
+}
