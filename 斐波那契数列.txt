@@ -1,0 +1,26 @@
+public class Solution {
+    public int Fibonacci(int n) {
+        int a = 1;
+        int b = 1;
+        int c = 0;
+        if(n < 0 || n > 39)
+            return 0;
+        if(n == 1 || n == 2)
+            return 1;
+        for(int i = 3; i <= n;i++){
+            c = a + b;
+            b = a;
+            a = c;
+        }
+        return c;
+    }
+    
+	//Ê¹ÓÃµÝ¹é×ö
+    public int Fibonacci(int n){
+        if(n < 0 || n > 39)
+            return 0;
+        if(n == 1 || n == 2)
+            return 1;
+        return Fibonacci(n-1)+Fibonacci(n-2);
+    }
+}
