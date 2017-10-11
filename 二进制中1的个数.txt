@@ -1,0 +1,8 @@
+//好像直接用Java里面的方法这样做不太合适。。
+public class Solution {
+    public int NumberOf1(int n) {
+		String str = Integer.toBinaryString(n);
+        int length = str.length() - str.replaceAll("1", "").length();
+        return length;
+    }
+}
