@@ -1,4 +1,5 @@
-//好像直接用Java里面的方法这样做不太合适。。
+Note:It seems to be not good to used existed function to resolve this question
+
 public class Solution {
     public int NumberOf1(int n) {
 		String str = Integer.toBinaryString(n);
