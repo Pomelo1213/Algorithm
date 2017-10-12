@@ -1,0 +1,21 @@
+public class Solution {
+    public static double Power(double base, int exponent) {
+        boolean flag = false;
+        if(exponent == 0){
+            return 1;
+        }
+        if(exponent < 0) {
+            exponent *= -1;
+            flag = true;
+        }
+
+        double n = base;
+        for(int i = 1 ; i < exponent; ++i){
+            base *= n;
+        }
+        if(flag){
+            base = 1.0 / base;
+        }
+        return base;
+    }
+}
