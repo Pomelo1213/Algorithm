@@ -1,0 +1,32 @@
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+import java.util.Stack;
+public class Solution {
+    public ListNode FindKthToTail(ListNode head,int k) {
+        int length = 0;
+        if(head == null)
+            return null;
+		ListNode p = head;
+        Stack<ListNode> stack = new Stack<ListNode>();
+        while(head != null){
+            stack.push(head);
+            head = head.next;
+            length++;
+        }
+        if(k > length || k ==0)
+            return null;
+        
+        for(int i = 1; i <= k; i++){
+            p = stack.pop();
+        }
+        return p;
+        
+    }
+}
