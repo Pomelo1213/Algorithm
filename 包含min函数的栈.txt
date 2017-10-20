@@ -1,0 +1,32 @@
+import java.util.Stack;
+import java.util.Iterator;
+
+public class Solution {
+    Stack<Integer> stack = new Stack<Integer>();
+    
+    public void push(int node) {
+        stack.push(node);
+    }
+    
+    public void pop() {
+        stack.pop();
+    }
+    
+    public int top() {
+        return stack.peek();
+    }
+    
+    public int min() {
+        
+        int min = stack.peek();
+        int node = 0;
+        Iterator<Integer> it = stack.iterator();
+        while(it.hasNext()){
+            node = it.next();
+            if(node <= min)
+                min = node;
+        }
+
+        return min;
+    }
+}
